@@ -1,0 +1,51 @@
+﻿@model GSIntegradora.Web.UI.Models.LogOnModel
+
+@{
+	ViewBag.Title = "Login";
+	Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Log On</h2>
+<p>
+	Please enter your user name and password. @Html.ActionLink("Register", "Register") if you don't have an account.
+</p>
+
+@section Scripts {
+	@Scripts.Render("~/bundles/jqueryval")
+}
+
+@Html.ValidationSummary(true, "Login was unsuccessful. Please correct the errors and try again.")
+
+@using (Html.BeginForm())
+{
+	<div>
+		<fieldset>
+			<legend>Account Information</legend>
+
+			<div class="editor-label">
+				@Html.LabelFor(m => m.Nome)
+			</div>
+			<div class="editor-field">
+				@Html.TextBoxFor(m => m.Nome)
+				@Html.ValidationMessageFor(m => m.Nome)
+			</div>
+
+			<div class="editor-label">
+				@Html.LabelFor(m => m.Senha)
+			</div>
+			<div class="editor-field">
+				@Html.PasswordFor(m => m.Senha)
+				@Html.ValidationMessageFor(m => m.Senha)
+			</div>
+
+			<div class="editor-label">
+				@Html.CheckBoxFor(m => m.LembrarMe)
+				@Html.LabelFor(m => m.LembrarMe)
+			</div>
+
+			<p>
+				<input type="submit" value="Log On" />
+			</p>
+		</fieldset>
+	</div>
+}
