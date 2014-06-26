@@ -144,10 +144,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\GSIDB.mdf" />
-    <Content Include="App_Data\GSIDB_log.ldf">
-      <DependentUpon>GSIDB.mdf</DependentUpon>
-    </Content>
     <Content Include="Content\css\libs\animate.min.css" />
     <Content Include="Content\css\libs\font-awesome\css\font-awesome.min.css" />
     <Content Include="Content\css\libs\font-awesome\fonts\fontawesome-webfont.svg" />
@@ -352,7 +348,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GSIntegradora.Aplicacao\GSIntegradora.Aplicacao.csproj">
       <Project>{39a391b1-b5c6-46fe-9cf7-739911f99765}</Project>
