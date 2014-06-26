@@ -33,9 +33,6 @@
     <Reference Include="FluentNHibernate">
       <HintPath>..\packages\FluentNHibernate.1.4.0.0\lib\net35\FluentNHibernate.dll</HintPath>
     </Reference>
-    <Reference Include="GSIntegradora.Aplicacao">
-      <HintPath>..\GSIntegradora.Web.UI\Bin\GSIntegradora.Aplicacao.dll</HintPath>
-    </Reference>
     <Reference Include="Iesi.Collections">
       <HintPath>..\packages\Iesi.Collections.3.2.0.4000\lib\Net35\Iesi.Collections.dll</HintPath>
     </Reference>
@@ -66,13 +63,19 @@
     <Compile Include="NHibernate\Configuracao\NhibernateSessionFactoryProvider.cs" />
     <Compile Include="NHibernate\Mapeamentos\UsuarioMapeamento.cs" />
     <Compile Include="Ninject\IoC.cs" />
-    <Compile Include="Ninject\ModulosNinject.cs" />
+    <Compile Include="Ninject\ModulosNinject.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\GSIntegradora.Aplicacao\GSIntegradora.Aplicacao.csproj">
+      <Project>{39a391b1-b5c6-46fe-9cf7-739911f99765}</Project>
+      <Name>GSIntegradora.Aplicacao</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GSIntegradora.Dominio\GSIntegradora.Dominio.csproj">
       <Project>{9414C262-6B66-42F1-B81E-D32DB6B7F495}</Project>
       <Name>GSIntegradora.Dominio</Name>

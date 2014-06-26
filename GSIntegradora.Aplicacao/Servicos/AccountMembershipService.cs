@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Web.Security;
 using GSIntegradora.Dominio.Interfaces;
-using GSIntegradora.Infraestrutura;
-using GSIntegradora.Infraestrutura.Contextos;
-using GSIntegradora.Infraestrutura.NHibernate.Configuracao;
-using Ninject;
 
 namespace GSIntegradora.Aplicacao.Servicos
 {
