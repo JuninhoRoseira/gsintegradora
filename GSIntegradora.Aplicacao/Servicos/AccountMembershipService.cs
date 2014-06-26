@@ -31,7 +31,7 @@ namespace GSIntegradora.Aplicacao.Servicos
 			// TODO: Injetar dependencia
 			_provider = provider ?? Membership.Provider;
 
-			//CreateUser("wilson", "kk01jold", "juninhoroseira@gmail.com");
+			//CreateUser("wilson", "teste01", "juninhoroseira@gmail.com");
 
 		}
 
