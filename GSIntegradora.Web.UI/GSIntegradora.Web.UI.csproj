@@ -144,13 +144,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\GSIDB.mdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="App_Data\GSIDB_log.ldf">
-      <DependentUpon>GSIDB.mdf</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Content\agile\ckeditor\adapters\jquery.js" />
     <Content Include="Content\agile\ckeditor\ckeditor.js" />
     <Content Include="Content\agile\ckeditor\config.js" />
@@ -669,7 +662,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GSIntegradora.Aplicacao\GSIntegradora.Aplicacao.csproj">
       <Project>{39a391b1-b5c6-46fe-9cf7-739911f99765}</Project>
