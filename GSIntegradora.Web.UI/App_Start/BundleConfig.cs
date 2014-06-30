@@ -10,13 +10,19 @@ namespace GSIntegradora.Web.UI
 			bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
 						"~/Scripts/jquery-{version}.js"));
 
-			bundles.Add(new ScriptBundle("~/bundles/Piccasso").Include(
+						// Piccasso
+			bundles.Add(new ScriptBundle("~/bundles/Piccasso/js").Include(
 				"~/Scripts/js/libs/all_in_one_libs.js",
 				"~/Scripts/js/libs/colorpicker/colpick.js",
 				"~/Scripts/js/libs/less-1.5.1.min.js",
 				"~/Scripts/js/libs/jquery.cookie.js",
 				"~/Scripts/js/styleSwitcher.js",
 				"~/Scripts/js/front.js"));
+
+			//AgileUI
+			bundles.Add(new ScriptBundle("~/bundles/AgileUI/js").Include(
+						"~/Scripts/agile/js/minified/aui-production.min.js",
+						"~/Scripts/agile/js/aui-demo.js"));
 
 			bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
 						"~/Scripts/jquery-ui-{version}.js"));
@@ -52,6 +58,14 @@ namespace GSIntegradora.Web.UI
 				"~/Content/css/libs/font-awesome/css/font-awesome.min.css",
 				"~/Content/css/style.css",
 				"~/Scripts/js/libs/colorpicker/colpick.css"));
+
+				// AgileUI
+			bundles.Add(new StyleBundle("~/Content/AgileUI/css").Include(
+			"~/Content/agile/css/minified/aui-production.min.css",
+			"~/Content/agile/themes/minified/agileui/color-schemes/layouts/default.min.css",
+			"~/Content/agile/themes/minified/agileui/color-schemes/elements/default.min.css",
+			"~/Content/agile/themes/minified/agileui/responsive.min.css",
+			"~/Content/agile/themes/minified/agileui/animations.min.css"));
 
 		}
 	}

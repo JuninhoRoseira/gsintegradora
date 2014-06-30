@@ -15,24 +15,7 @@ namespace GSIntegradora.Aplicacao.Servicos
 
 		public AccountMembershipService(MembershipProvider provider)
 		{
-
-			//// TODO: Injetar dependencia
-			//if (provider != null)
-			//	_provider = provider;
-			//else
-			//{
-			//	var session = NHibernateHelper.SessionFactory.OpenSession();
-			//	var usuarioContexto = new UsuarioContexto(session);
-
-			//	_provider = new GSIMembershipProvider(usuarioContexto);
-
-			//}
-
-			// TODO: Injetar dependencia
 			_provider = provider ?? Membership.Provider;
-
-			//CreateUser("wilson", "teste01", "juninhoroseira@gmail.com");
-
 		}
 
 		public int MinPasswordLength

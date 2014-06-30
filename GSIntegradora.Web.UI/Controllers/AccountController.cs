@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using System.Web.Security;
 using GSIntegradora.Aplicacao.Servicos;
 using GSIntegradora.Dominio.Interfaces;
 using GSIntegradora.Web.UI.Filters;
@@ -64,6 +65,14 @@ namespace GSIntegradora.Web.UI.Controllers
 
 			// If we got this far, something failed, redisplay form
 			return View(model);
+
+		}
+
+		public ActionResult LogOff()
+		{
+			_formsService.SignOut();
+
+			return RedirectToAction("Index", "Home");
 
 		}
 

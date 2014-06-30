@@ -4,36 +4,96 @@
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width" />
-	@Styles.Render("~/Content/Piccasso/css")
+	@Styles.Render("~/Content/AgileUI/css")
 	<title>@ViewBag.Title</title>
 </head>
-<body class="home-page template-home-one-page">
-	<div class="container">
-		<header id="header" style="border-bottom:2px solid #A60000;height: 100px !important;margin-bottom: 100px">
-			<a href="@Url.Action(" index", "Home" )" class="logo">
-				<img src="~/Content/images/gsti-logo.jpg" style="margin-top: 10px" alt="logo" />
-			</a>
-			<h1 style="text-align: center;padding-top: 28px">
-				Customer Portal
-			</h1>
-		</header>
-		<div id="content">
-			<div class="grid">
-				<div class="unit one-third"></div>
-				<div class="unit one-third">
-					@RenderBody()
-				</div>
-				<div class="unit one-third"></div>
+<body class="fixed-sidebar fixed-header">
+	<div id="page-wrapper">
+		<div id="page-sidebar">
+			<div id="header-logo" style="background: #e4e9f0 !important; padding: 6px 24px; width: 192px; border-bottom: 1px solid #fefefe; height: 40px;">
+				<img src="~/Content/images/gsti-integradora-logo.png" width="200" height="43" alt="logo" />
+			</div>
+			<div id="sidebar-search">
+				<input type="text" placeholder="Pesquisar..." class="autocomplete-input tooltip-button" data-placement="right" title="Procurar" id="" name="" />
+				<i class="glyph-icon icon-search"></i>
+			</div>
+			<div id="sidebar-menu" class="scrollable-content">
+				<ul>
+					<li>
+						<a href="#" title="Relatórios">
+							<i class="glyph-icon icon-dashboard"></i>
+							Relatórios
+						</a>
+					</li>
+					<li>
+						<a href="#" title="Tickets">
+							<i class="glyph-icon icon-bullhorn"></i>
+							Tickets
+						</a>
+					</li>
+					<li>
+						<a href="#" title="Chat">
+							<i class="glyph-icon icon-comment-o"></i>
+							Chat
+							<span class="badge bg-green radius-all-100">on</span>
+						</a>
+					</li>
+					<li>
+						<a href="#" title="Contato">
+							<i class="glyph-icon icon-envelope-o"></i>
+							Contato
+						</a>
+					</li>
+				</ul>
 			</div>
 		</div>
-		<footer id="footer">
-			<div class="wrapper centered">
-				&copy; GSIntegradora - Todos os direitos reservados.
+		<div id="page-main">
+			<div id="page-main-wrapper">
+				<div id="page-header" class="clearfix">
+					<div id="page-header-wrapper" class="clearfix">
+						<div class="top-icon-bar dropdown">
+							<a href="javascript:;" title="" class="user-ico clearfix" data-toggle="dropdown">
+								<img width="36" src="~/Content/agile/images/gravatar.jpg" alt="">
+								<span>"Nome do Funcionário"</span>
+								<i class="glyph-icon icon-chevron-down"></i>
+							</a>
+							<ul class="dropdown-menu float-right">
+								<li>
+									<span class="badge badge-absolute float-left radius-all-100 mrg5R bg-green tooltip-button" title="" data-original-title="You can add badges even to dropdown menus!">7</span>
+									<a href="javascript:;" title="">
+										<i class="glyph-icon icon-user mrg5R"></i>
+										Detalhes da Conta
+									</a>
+								</li>
+								<li>
+									<a href="javascript:;" title="">
+										<i class="glyph-icon icon-cog mrg5R"></i>
+										Editar Perfil
+									</a>
+								</li>
+								<li>
+									<a class="font-orange" href="javascript:;" title="">
+										<i class="glyph-icon icon-flag mrg5R"></i>
+										Notificações
+									</a>
+								</li>
+								<li>
+									<a href="@Url.Action("LogOff", "Account")" title="">
+										<i class="glyph-icon icon-signout font-size-13 mrg5R"></i>
+										<span class="font-bold">Logout</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				@Html.Partial("_BarraSuperior")
+				@RenderBody()
 			</div>
-		</footer>
+		</div>
 	</div>
 	@Scripts.Render("~/bundles/jquery")
-	@Scripts.Render("~/bundles/Piccasso")
+	@Scripts.Render("~/bundles/AgileUI/js")
 	@RenderSection("scripts", required: false)
 </body>
 </html>

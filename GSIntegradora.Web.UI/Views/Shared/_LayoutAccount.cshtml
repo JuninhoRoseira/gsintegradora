@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width" />
+	@Styles.Render("~/Content/Piccasso/css")
+	<title>@ViewBag.Title</title>
+</head>
+<body class="home-page template-home-one-page">
+	<div class="container">
+		<header id="header" style="border-bottom:2px solid #A60000;height: 100px !important;margin-bottom: 100px">
+			<a href="@Url.Action("Index", "Home")" class="logo">
+				<img src="/Content/images/gsti-logo.jpg" style="margin-top: 10px" alt="logo" />
+			</a>
+			<h1 style="text-align: center;padding-top: 28px">
+				Portal do Cliente
+			</h1>
+		</header>
+		<div id="content">
+			<div class="grid">
+				<div class="unit one-third"></div>
+				<div class="unit one-third">
+					@RenderBody()
+				</div>
+				<div class="unit one-third"></div>
+			</div>
+		</div>
+		<footer id="footer">
+			<div class="wrapper centered">
+				&copy; GSIntegradora - Todos os direitos reservados.
+			</div>
+		</footer>
+	</div>
+	@Scripts.Render("~/bundles/jquery")
+	@Scripts.Render("~/bundles/Piccasso/js")
+	@RenderSection("scripts", required: false)
+</body>
+</html>

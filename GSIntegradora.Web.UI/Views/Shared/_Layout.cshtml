@@ -8,10 +8,9 @@
 	<title>@ViewBag.Title</title>
 </head>
 <body class="home-page template-home-one-page">
-
 	<div class="container">
 		<header id="header">
-			<a href="@Url.Action(" index", "Home" )" class="logo">
+			<a href="@Url.Action("Index", "Home")" class="logo">
 				<img src="~/Content/images/gsti-logo.jpg" style="margin-top: 10px" alt="logo" />
 			</a>
 			<a href="javascript:;" class="show-on-phone show-on-tablet" id="phone-toggle-menu"></a>
@@ -62,7 +61,7 @@
 		</footer>
 	</div>
 	@Scripts.Render("~/bundles/jquery")
-	@Scripts.Render("~/bundles/Piccasso")
+	@Scripts.Render("~/bundles/Piccasso/js")
 	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
 	<script>
 
