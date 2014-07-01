@@ -407,6 +407,8 @@
     <Content Include="Content\images\logos\vmware-logo.jpg" />
     <Content Include="Content\images\pointer.png" />
     <Content Include="Content\images\slider-1.jpg" />
+    <Content Include="Content\images\slider-2.jpg" />
+    <Content Include="Content\images\slider-3.jpg" />
     <Content Include="Content\images\temp\avatar-1.jpg" />
     <Content Include="Content\images\temp\avatar-2.jpg" />
     <Content Include="Content\images\temp\avatar-3.jpg" />
