@@ -422,6 +422,7 @@
     <Content Include="Content\images\temp\blog-small-2.jpg" />
     <Content Include="Content\images\temp\blog-small-3.jpg" />
     <Content Include="Content\images\temp\device.png" />
+    <Content Include="Content\images\temp\firewall-icon.png" />
     <Content Include="Content\images\temp\ipad.png" />
     <Content Include="Content\images\temp\iphone.png" />
     <Content Include="Content\images\temp\monitor.png" />
@@ -446,6 +447,7 @@
     <Content Include="Content\images\temp\portfolio-long-3.jpg" />
     <Content Include="Content\images\temp\portfolio-long-4.jpg" />
     <Content Include="Content\images\temp\portfolio-long-5.jpg" />
+    <Content Include="Content\images\temp\security-icon.png" />
     <Content Include="Content\images\temp\single-blog-2.jpg" />
     <Content Include="Content\images\temp\single-blog-3.jpg" />
     <Content Include="Content\images\temp\single-blog-4.jpg" />
