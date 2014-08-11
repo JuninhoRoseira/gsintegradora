@@ -399,9 +399,6 @@
     <Content Include="Content\images\logos\sonicwall-logo.gif" />
     <Content Include="Content\images\logos\vmware-logo.jpg" />
     <Content Include="Content\images\pointer.png" />
-    <Content Include="Content\images\slider-1.jpg" />
-    <Content Include="Content\images\slider-2.jpg" />
-    <Content Include="Content\images\slider-3.jpg" />
     <Content Include="Content\images\temp\avatar-1.jpg" />
     <Content Include="Content\images\temp\avatar-2.jpg" />
     <Content Include="Content\images\temp\avatar-3.jpg" />
@@ -447,6 +444,7 @@
     <Content Include="Content\images\temp\single-blog.jpg" />
     <Content Include="Content\images\temp\slider-1.jpg" />
     <Content Include="Content\images\temp\slider-2.jpg" />
+    <Content Include="Content\images\temp\slider-3.jpg" />
     <Content Include="Content\images\temp\slider-widget-1.jpg" />
     <Content Include="Content\images\temp\slider-widget-2.jpg" />
     <Content Include="Content\images\temp\slider-widget-3.jpg" />
