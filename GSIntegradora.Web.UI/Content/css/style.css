@@ -3209,9 +3209,9 @@ header#header {
 		width: 244px;
 	}
 
-	header#header .logo img {
-		margin-top: 20px;
-	}
+		header#header .logo img {
+			margin-top: 20px;
+		}
 
 		header#header .logo em {
 			color: #A60000;
@@ -3270,9 +3270,9 @@ header#header.scrolled {
 		width: 100%;
 	}
 
-	header#header.scrolled .logo img {
-		margin-top: 10px;
-	}
+		header#header.scrolled .logo img {
+			margin-top: 10px;
+		}
 
 	header#header.scrolled nav {
 		position: absolute;
@@ -4868,8 +4868,10 @@ section.slider {
 			background-color: #A60000;
 		}
 
-	section.slider .animate-in .layer-1 {
-		top: 470px;
+	section.slider .animate-in .layer-1,
+	section.slider .animate-in .layer-2,
+	section.slider .animate-in .layer-3 {
+		top: 270px;
 	}
 
 	section.slider .animate-in .layer-2,
@@ -4918,7 +4920,9 @@ section.slider {
 		height: 400px;
 	}
 
-		section.slider .animate-in .layer-1 {
+		section.slider .animate-in .layer-1,
+		section.slider .animate-in .layer-2,
+		section.slider .animate-in .layer-3 {
 			top: 140px;
 		}
 
@@ -4965,7 +4969,9 @@ section.slider {
 		right: 5px;
 	}
 
-	section.slider .animate-in .layer-1 {
+	section.slider .animate-in .layer-1,
+	section.slider .animate-in .layer-2,
+	section.slider .animate-in .layer-3 {
 		font-size: 28px;
 		font-size: 2.8rem;
 		top: 130px;
