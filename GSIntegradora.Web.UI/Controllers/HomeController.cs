@@ -18,14 +18,20 @@ namespace GSIntegradora.Web.UI.Controllers
 
 	    [AcceptVerbs("POST")]
 
-		public ActionResult Index(string name, string email, string subject, string message)
+		public ActionResult Index(string name, string email, string subject, string message, string empresa, string telefone)
 	    {
-			var mailMessage = new MailMessage
-			{
-				Subject = subject,
-				Body = string.Format("{0}<hr/><b>Nome:</b>{1}<br/><b>E-Mail:</b>{2}", message, name, email),
-				IsBodyHtml = true
-			};
+		    var mailMessage = new MailMessage
+		    {
+			    Subject = subject,
+			    Body = string.Format(
+				    "{0}<hr/><b>Nome:</b>{1}<br/><b>E-Mail:</b>{2}<br/><b>Empresa:</b>{3}<br/><b>Telefone:</b>{4}",
+				    message,
+				    name,
+				    email,
+				    empresa,
+				    telefone),
+			    IsBodyHtml = true
+		    };
 
 			mailMessage.ReplyToList.Add(email);
 

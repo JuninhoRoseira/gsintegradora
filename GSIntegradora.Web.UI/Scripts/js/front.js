@@ -916,6 +916,12 @@ jQuery.noConflict()(function ($) {
 				var nameInput = $('#input-name');
 				var name = nameInput.val();
 
+				var empresaInput = $('#input-empresa');
+				var empresa = empresaInput.val();
+
+				var telefoneInput = $('#input-telefone');
+				var telefone = telefoneInput.val();
+
 				var emailInput = $('#input-email');
 				var email = emailInput.val();
 
@@ -932,14 +938,28 @@ jQuery.noConflict()(function ($) {
 				}
 
 				if ($.trim(email) == '' || !self.isValidEmailAddress(email)) {
-					emailInput.attr('title', 'Please enter valid email address').tipsy("show").focus();
+					emailInput.attr('title', 'Favor digitar um e-mail válido').tipsy("show").focus();
 					return false;
 				} else {
 					emailInput.tipsy("hide");
 				}
 
+				if ($.trim(empresa) == '') {
+					empresaInput.attr('title', 'Favor digitar a empresa').tipsy("show").focus();
+					return false;
+				} else {
+					empresaInput.tipsy("hide");
+				}
+
+				if ($.trim(telefone) == '') {
+					telefoneInput.attr('title', 'Favor digitar telefone').tipsy("show").focus();
+					return false;
+				} else {
+					telefoneInput.tipsy("hide");
+				}
+
 				if ($.trim(message) == '') {
-					messageInput.attr('title', 'Please enter a message').tipsy("show").focus();
+					messageInput.attr('title', 'Favor digitar uma mensagem').tipsy("show").focus();
 					return false;
 				} else {
 					messageInput.tipsy("hide");
@@ -953,7 +973,9 @@ jQuery.noConflict()(function ($) {
 						'name': name,
 						'email': email,
 						'subject': subject,
-						'message': message
+						'message': message,
+						'empresa': empresa,
+						'telefone': telefone
 					},
 					beforeSend: function () {
 						$('#contact-form input, #contact-form textarea, #contact-form button').attr('disabled', 'disabled');
