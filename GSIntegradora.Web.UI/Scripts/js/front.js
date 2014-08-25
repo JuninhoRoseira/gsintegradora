@@ -1,4 +1,4 @@
-jQuery.noConflict()(function ($) {
+(function ($) {
 	"use strict";
 
 	var Core = {
@@ -6,7 +6,7 @@ jQuery.noConflict()(function ($) {
 		/**
 			Constructor
 		**/
-		initialize: function () {
+		initialize: function() {
 
 			this.build();
 			this.events();
@@ -15,7 +15,7 @@ jQuery.noConflict()(function ($) {
 		/**
 			Build page elements, plugins init
 		**/
-		build: function () {
+		build: function() {
 
 			var self = this;
 
@@ -40,14 +40,14 @@ jQuery.noConflict()(function ($) {
 			/**
 				IE8 Placeholders
 			**/
-			$('.ie9 input[placeholder], .ie9 textarea[placeholder]').each(function () {
+			$('.ie9 input[placeholder], .ie9 textarea[placeholder]').each(function() {
 				$(this).val($(this).attr('placeholder'));
 
-				$(this).focus(function () {
+				$(this).focus(function() {
 					if (this.value == $(this).attr('placeholder')) this.value = '';
 				});
 
-				$(this).blur(function () {
+				$(this).blur(function() {
 					if ($.trim($(this).val()) == '') $(this).val($(this).attr('placeholder'));
 				});
 
@@ -57,7 +57,7 @@ jQuery.noConflict()(function ($) {
 			var selects = $('select').not('select#sswitcher-primary-font, select#sswitcher-secondary-font');
 			if (selects.length) {
 
-				selects.each(function () {
+				selects.each(function() {
 
 					$(this).selecter({
 						customClass: "theme-select-input"
@@ -68,12 +68,12 @@ jQuery.noConflict()(function ($) {
 			}
 
 			// pretty checkboxes
-			$('input[type=radio], input[type=checkbox]').each(function () {
-				$(this).on('ifChecked', function (event) {
+			$('input[type=radio], input[type=checkbox]').each(function() {
+				$(this).on('ifChecked', function(event) {
 
 					$(this).attr('checked', 'checked').change();
 
-				}).on('ifUnchecked', function () {
+				}).on('ifUnchecked', function() {
 
 					var name = $(this).attr('name');
 					$(this).removeAttr('checked').change();
@@ -85,7 +85,7 @@ jQuery.noConflict()(function ($) {
 			});
 
 			// Add class to submenu with children
-			$('#header-menu li').each(function () {
+			$('#header-menu li').each(function() {
 				if ($(this).find('ul').length) {
 					$(this).children('a:first').append('<span class="mobile-menu-toggle"></span>');
 					$(this).addClass('has-children');
@@ -93,7 +93,7 @@ jQuery.noConflict()(function ($) {
 				}
 			});
 
-			$('.mobile-menu-toggle').click(function () {
+			$('.mobile-menu-toggle').click(function() {
 				$(this).toggleClass('opened');
 				$(this).parent().next('ul:first').toggle();
 				return false;
@@ -106,7 +106,7 @@ jQuery.noConflict()(function ($) {
 			});
 
 			$('.posts-masonry img').waitForImages({
-				finished: function () {
+				finished: function() {
 					$('.posts-masonry').masonry({
 						itemSelector: '.item-masonry',
 						gutter: 30
@@ -115,7 +115,7 @@ jQuery.noConflict()(function ($) {
 			});
 
 			// Toggles
-			$('.toggle h4').click(function () {
+			$('.toggle h4').click(function() {
 
 				var top = $(this).parent().parent();
 				var content = $(this).parent().find('.item-content');
@@ -140,7 +140,7 @@ jQuery.noConflict()(function ($) {
 			});
 
 			// Tabs
-			$('.tabs').each(function () {
+			$('.tabs').each(function() {
 
 				var tabID = $(this).attr('id');
 
@@ -153,17 +153,17 @@ jQuery.noConflict()(function ($) {
 					useCSSMaxWidth: false,
 					slideEaseDuration: 800,
 					heightEaseDuration: 800,
-					callback: function () {
+					callback: function() {
 
 						self.initAnimations();
 
 					},
-					onload: function () {
+					onload: function() {
 
 						var newsTab = $(this.elem).find('.tab-news .posts-carousel');
 
 						if (newsTab.length) {
-							newsTab.each(function () {
+							newsTab.each(function() {
 
 								$(this).owlCarousel({
 									items: 4,
@@ -183,7 +183,7 @@ jQuery.noConflict()(function ($) {
 			});
 
 			// Logos carousel
-			$('.logos-carousel').each(function () {
+			$('.logos-carousel').each(function() {
 
 				$(this).owlCarousel({
 					items: 1,
@@ -193,7 +193,7 @@ jQuery.noConflict()(function ($) {
 			});
 
 			// Testimonials carousel
-			$('.testimonials-carousel').each(function () {
+			$('.testimonials-carousel').each(function() {
 
 				$(this).owlCarousel({
 					autoPlay: true,
@@ -204,13 +204,13 @@ jQuery.noConflict()(function ($) {
 			});
 
 			// Add different style classes to different tabs
-			$('.ls-wrapper').each(function () {
+			$('.ls-wrapper').each(function() {
 				var style = $(this).find('div.tabs').data('style');
 				$(this).addClass('style-' + style);
 			});
 
 			// Tipsy
-			$('.show-tooltip').each(function () {
+			$('.show-tooltip').each(function() {
 				var g = $(this).data('gravity');
 				g = g == undefined ? 's' : g;
 				$(this).tipsy({ fade: true, gravity: g, opacity: '1' });
@@ -225,7 +225,7 @@ jQuery.noConflict()(function ($) {
 			}
 
 			// Portfolio widget slider
-			$('.widget .slider').each(function () {
+			$('.widget .slider').each(function() {
 
 				var parent = $(this).parent();
 				var slider = $(this);
@@ -233,7 +233,7 @@ jQuery.noConflict()(function ($) {
 				$(this).nivoSlider({
 					directionNav: true,
 					controlNav: false,
-					afterChange: function () {
+					afterChange: function() {
 						var index = slider.data('nivo:vars').currentSlide;
 						parent.find('.titles div.item').hide();
 						parent.find('.titles div.item[data-number=' + index + ']').fadeIn();
@@ -243,7 +243,7 @@ jQuery.noConflict()(function ($) {
 			});
 
 			// Post slider with thumbnails
-			$('.post-gallery').each(function () {
+			$('.post-gallery').each(function() {
 
 				var parent = $(this);
 				var slider = $(this).find('.slider');
@@ -251,7 +251,7 @@ jQuery.noConflict()(function ($) {
 				slider.nivoSlider({
 					directionNav: true,
 					controlNavThumbs: true,
-					afterLoad: function () {
+					afterLoad: function() {
 
 						parent.find('.nivo-controlNav').addClass('swiper-wrapper').wrap('<div class="nivo-controlNav_wrap swiper-container"></div>');
 						parent.find('.nivo-controlNav_wrap').append('<div class="clear"></div>');
@@ -278,7 +278,7 @@ jQuery.noConflict()(function ($) {
 
 			if ($('.portfolio').length) {
 
-				$('.portfolio').each(function () {
+				$('.portfolio').each(function() {
 
 					p_item_num++;
 
@@ -319,22 +319,22 @@ jQuery.noConflict()(function ($) {
 						}
 					});
 
-					$('.portfolio-view-flat').each(function () {
+					$('.portfolio-view-flat').each(function() {
 
 						var flatPItem = $(this);
 
-						$(this).find('.item').hover(function () {
+						$(this).find('.item').hover(function() {
 
 							var imgWidth = parseInt($(this).find('img').width());
 
 							var add = imgWidth - 384;
 
 							flatPItem.find('.swiper-wrapper').width('+=' + add);
-							$(this).stop().animate({ 'width': '+=' + add }, 800, function () {
+							$(this).stop().animate({ 'width': '+=' + add }, 800, function() {
 								swiperFlat.reInit();
 							});
-						}, function () {
-							$(this).stop().animate({ 'width': 384 }, 800, function () {
+						}, function() {
+							$(this).stop().animate({ 'width': 384 }, 800, function() {
 								swiperFlat.reInit();
 							});
 						});
@@ -343,7 +343,7 @@ jQuery.noConflict()(function ($) {
 
 					// chage view
 					var viewLinks = $(this).find('.filter-view a');
-					viewLinks.click(function () {
+					viewLinks.click(function() {
 						viewLinks.removeClass('current');
 						$(this).addClass('current');
 
@@ -366,7 +366,7 @@ jQuery.noConflict()(function ($) {
 						Portfolio filters functional
 					**/
 					var filterLinks = $(this).find('.filter-links a');
-					filterLinks.click(function () {
+					filterLinks.click(function() {
 						filterLinks.removeClass('current');
 						$(this).addClass('current');
 
@@ -382,7 +382,7 @@ jQuery.noConflict()(function ($) {
 
 						var flatViewHiddenElements = flatViewPortfolioItems.not('.item.filter-' + currentFilter).addClass('bounceOut animated');
 
-						portfolioFlatItemsContainer.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+						portfolioFlatItemsContainer.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
 							flatViewHiddenElements.removeClass('bounceIn bounceOut animated').hide();
 							flatViewFilteredItems.removeClass('bounceIn bounceOut animated').show();
 							portfolioSwiper.find('.swiper-scrollbar-flat').show();
@@ -407,7 +407,7 @@ jQuery.noConflict()(function ($) {
 
 							window.localStorage.setItem("picasso_grid_portfolio_i_" + uniqID, 0);
 
-							filteredItems.each(function () {
+							filteredItems.each(function() {
 								var i = parseInt(window.localStorage.getItem("picasso_grid_portfolio_i_" + uniqID));
 
 								if (i == 0) {
@@ -434,7 +434,7 @@ jQuery.noConflict()(function ($) {
 
 						}
 
-						portfolioGridItemsContainer.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+						portfolioGridItemsContainer.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
 							if (allGridItems) {
 								allGridItems.removeClass('bounceIn bounceOut animated');
 							}
@@ -452,7 +452,7 @@ jQuery.noConflict()(function ($) {
 						Portfolio lightbox
 					**/
 					var portfolioDiv = $(this);
-					portfolioDiv.find('a.details').click(function () {
+					portfolioDiv.find('a.details').click(function() {
 
 						var portfolioItemId = $(this).attr('href');
 						var portfolioItem = $(portfolioItemId);
@@ -467,7 +467,7 @@ jQuery.noConflict()(function ($) {
 				/**
 					Portfolio lightbox close
 				**/
-				$('.portfolio-view-lightbox .overlay, .portfolio-view-lightbox a.close').click(function (e) {
+				$('.portfolio-view-lightbox .overlay, .portfolio-view-lightbox a.close').click(function(e) {
 					$('.portfolio-view-lightbox .item').hide();
 					$('body').css('overflow', 'auto');
 					$('.portfolio-view-lightbox').fadeOut();
@@ -477,7 +477,7 @@ jQuery.noConflict()(function ($) {
 				/**
 					Portfolio lightbox navigation: pagination links
 				**/
-				$('.portfolio-view-lightbox .images-pagination a').click(function () {
+				$('.portfolio-view-lightbox .images-pagination a').click(function() {
 
 					var portfolioItem = $(this).parents('.item');
 
@@ -496,7 +496,7 @@ jQuery.noConflict()(function ($) {
 				/**
 					Portfolio lightbox navigation: prev / next image
 				**/
-				$('.next-image, .prev-image').click(function () {
+				$('.next-image, .prev-image').click(function() {
 
 					var portfolioItem = $(this).parents('.item');
 					var index = portfolioItem.find('.images-pagination a').index(portfolioItem.find('.images-pagination a.current'));
@@ -520,7 +520,7 @@ jQuery.noConflict()(function ($) {
 				/**
 					Portfolio lightbox navigation: prev / next project
 				**/
-				$('.next-project, .prev-project').click(function () {
+				$('.next-project, .prev-project').click(function() {
 
 					var portfolioItem = $(this).parents('.item');
 					var portfolioDiv = $(this).parents('.portfolio');
@@ -535,7 +535,7 @@ jQuery.noConflict()(function ($) {
 
 					portfolioItem.find('.images-pagination, .next-image, .prev-image, .next-project, .prev-project, .close').hide();
 
-					portfolioItem.fadeOut(500, function () {
+					portfolioItem.fadeOut(500, function() {
 
 						portfolioItem = portfolioDiv.find('.portfolio-view-lightbox .item:eq(' + newIndex + ')');
 
@@ -549,7 +549,7 @@ jQuery.noConflict()(function ($) {
 				/**
 					Resize portfolio lightbox with window
 				**/
-				$(window).resize(function () {
+				$(window).resize(function() {
 					self.resizeLightBox();
 				});
 
@@ -558,9 +558,9 @@ jQuery.noConflict()(function ($) {
 			/**
 				Body parallax
 			**/
-			$('section.parallax').each(function () {
+			$('section.parallax').each(function() {
 				var parallaxItem = $(this);
-				$(window).scroll(function () {
+				$(window).scroll(function() {
 					var yPos = -($(window).scrollTop() / parallaxItem.data('parallax-speed'));
 					var coords = 'center ' + yPos + 'px';
 					parallaxItem.css({ backgroundPosition: coords });
@@ -597,13 +597,13 @@ jQuery.noConflict()(function ($) {
 					freeMode: true
 				});
 
-				$('.media-page .swiper-container a').hover(function () {
+				$('.media-page .swiper-container a').hover(function() {
 					$('.media-page .swiper-container a').not($(this)).stop().fadeTo(500, '0.3');
-				}, function () {
+				}, function() {
 					$('.media-page .swiper-container a').stop().fadeTo(500, '1');
 				});
 
-				$('.media-page .swiper-container a').click(function () {
+				$('.media-page .swiper-container a').click(function() {
 
 					var index = $('.media-page .swiper-container a').index(this);
 					index++;
@@ -613,7 +613,7 @@ jQuery.noConflict()(function ($) {
 					return false;
 				});
 
-				$('#show-hide-media-thumbs').click(function () {
+				$('#show-hide-media-thumbs').click(function() {
 
 					$(this).toggleClass('closed');
 					$('.thumbs').fadeToggle(100);
@@ -625,13 +625,13 @@ jQuery.noConflict()(function ($) {
 			}
 
 			// Close preloader
-			$(window).load(function () {
+			$(window).load(function() {
 				if ($('body.preloader').length) {
 
 					$('body').waitForImages({
 						waitForAll: true,
-						finished: function () {
-							$('#preloader').fadeOut(800, function () {
+						finished: function() {
+							$('#preloader').fadeOut(800, function() {
 								$('body.preloader').removeClass('preloader');
 								$(this).remove();
 							});
@@ -650,23 +650,23 @@ jQuery.noConflict()(function ($) {
 		/**
 			Set page events
 		**/
-		events: function () {
+		events: function() {
 
 			var self = this;
 
 			// toggle mobile menu
-			$('#phone-toggle-menu').click(function () {
+			$('#phone-toggle-menu').click(function() {
 				$('#header-menu').toggleClass('hide-on-phone hide-on-tablet').toggleClass('opened');
 				$(this).toggleClass('opened');
 				return false;
 			});
 
 			// pricing tables on-hover transform
-			$('.pricing-table.flip .unit').mouseenter(function (e) {
+			$('.pricing-table.flip .unit').mouseenter(function(e) {
 				if ($(window).width() > 1199 && $(e.target).hasClass('button') == false) {
 					$(this).toggleClass('hover');
 				}
-			}).mouseleave(function (e) {
+			}).mouseleave(function(e) {
 				if ($(window).width() > 1199 && $(e.target).hasClass('button') == false) {
 					$(this).toggleClass('hover');
 				}
@@ -682,7 +682,7 @@ jQuery.noConflict()(function ($) {
 			/**
 				Tap header menu
 			**/
-			$('.mobile #header-menu > li a').on('click', function () {
+			$('.mobile #header-menu > li a').on('click', function() {
 				var submenu = $(this).next('ul');
 				if (submenu.length) {
 					submenu.show();
@@ -691,31 +691,31 @@ jQuery.noConflict()(function ($) {
 			});
 
 			// Set min-height for pricing tables
-			$(window).load(function () {
+			$(window).load(function() {
 				self.setupFlippedTables();
 			});
 
-			$(window).resize(function () {
+			$(window).resize(function() {
 				self.setupFlippedTables();
 			});
 
 			// close alert boxes
-			$('.alert').click(function () {
-				$(this).fadeOut(400, function () {
+			$('.alert').click(function() {
+				$(this).fadeOut(400, function() {
 					$(this).remove();
 				});
 			});
 
 			// display sharer
-			$('a.display-sharer').click(function () {
+			$('a.display-sharer').click(function() {
 				$(this).parents('.actions').find('.sharer').slideToggle();
 			});
 
-			$('a.display-sharer').mouseenter(function (e) {
+			$('a.display-sharer').mouseenter(function(e) {
 				$(this).parents('.actions').find('.sharer').slideToggle();
 			});
 
-			$('.sharer').mouseleave(function (e) {
+			$('.sharer').mouseleave(function(e) {
 				$(this).slideToggle();
 			});
 
@@ -723,13 +723,13 @@ jQuery.noConflict()(function ($) {
 			this.handleContactForm();
 
 			// testimonials section
-			$('body.home-page section.testimonials').each(function () {
+			$('body.home-page section.testimonials').each(function() {
 
 				var section = $(this);
 				var items = section.find('.item');
 				var links = section.find('.pages a');
 
-				links.on('click tap', function () {
+				links.on('click tap', function() {
 
 					var currentPage = links.index($(this));
 					items.hide();
@@ -760,19 +760,19 @@ jQuery.noConflict()(function ($) {
 		/**
 			Display portfolio lightbox
 		**/
-		showPortfolioLightbox: function (portfolioDiv, portfolioItem) {
+		showPortfolioLightbox: function(portfolioDiv, portfolioItem) {
 
 			var self = this;
 
 			portfolioDiv.find('.portfolio-view-lightbox').fadeIn();
 
 			portfolioItem.find('img').waitForImages({
-				finished: function () {
+				finished: function() {
 
 					$('body').css('overflow', 'hidden');
 					portfolioItem.show();
 					portfolioItem.find('.images > img').hide();
-					portfolioItem.find('.images > img:first').fadeIn(400, function () {
+					portfolioItem.find('.images > img:first').fadeIn(400, function() {
 
 						portfolioItem.find('a.close').show();
 						portfolioItem.find('.images-pagination a').removeClass('current');
@@ -794,7 +794,7 @@ jQuery.noConflict()(function ($) {
 				}
 			});
 
-			portfolioItem.find('img').each(function () {
+			portfolioItem.find('img').each(function() {
 				if (!$(this).attr('src'))
 					$(this).attr('src', $(this).data('src'));
 			});
@@ -804,7 +804,7 @@ jQuery.noConflict()(function ($) {
 		/**
 			Resize lightbox portfolio window
 		**/
-		resizeLightBox: function () {
+		resizeLightBox: function() {
 
 			if ($('.portfolio-view-lightbox:visible').length) {
 				var descWidth = $('.portfolio-view-lightbox img:visible').width();
@@ -816,7 +816,7 @@ jQuery.noConflict()(function ($) {
 		/**
 			Header menu scroll
 		**/
-		navMenu: function () {
+		navMenu: function() {
 
 			// one page nav
 			if ($('body.template-home-one-page').length) {
@@ -836,7 +836,7 @@ jQuery.noConflict()(function ($) {
 				var el = $('#header');
 				var elpos_original = el.offset().top;
 
-				$(window).scroll(function () {
+				$(window).scroll(function() {
 					var elpos = el.offset().top;
 					var windowpos = $(window).scrollTop();
 					var finaldestination = windowpos;
@@ -870,7 +870,7 @@ jQuery.noConflict()(function ($) {
 
 			}
 
-			$(window).resize(function () {
+			$(window).resize(function() {
 				if ($(window).width() < 959) {
 					$('#header').removeClass('scrolled');
 					$('body').removeClass('scrolling');
@@ -884,12 +884,12 @@ jQuery.noConflict()(function ($) {
 		/**
 			Calculate flipped tables min-height
 		**/
-		setupFlippedTables: function () {
+		setupFlippedTables: function() {
 
 			if ($(".pricing-table.flip").length && $(window).width() > 1199) {
-				$(".pricing-table.flip").each(function () {
+				$(".pricing-table.flip").each(function() {
 
-					var pricingUnitMaxHeight = Math.max.apply(null, $(this).find(".inside").map(function () {
+					var pricingUnitMaxHeight = Math.max.apply(null, $(this).find(".inside").map(function() {
 						return $(this).outerHeight(true);
 					}).get());
 
@@ -903,13 +903,13 @@ jQuery.noConflict()(function ($) {
 		/**
 			Handle contact form
 		**/
-		handleContactForm: function () {
+		handleContactForm: function() {
 
 			var self = this;
 
 			$('#contact-form input, #contact-form textarea').tipsy({ trigger: 'manual', gravity: 'sw', fade: true });
 
-			$('#contact-form').submit(function () {
+			$('#contact-form').submit(function() {
 
 				var form = $(this);
 
@@ -977,11 +977,11 @@ jQuery.noConflict()(function ($) {
 						'empresa': empresa,
 						'telefone': telefone
 					},
-					beforeSend: function () {
+					beforeSend: function() {
 						$('#contact-form input, #contact-form textarea, #contact-form button').attr('disabled', 'disabled');
 						$('#contact-form').fadeTo(500, '0.5');
 					},
-					success: function (response) {
+					success: function(response) {
 
 						form.html('<h3 class="success">Sua mensagem foi enviada. Obrigado!</h3>').css('opacity', '1');
 
@@ -996,10 +996,10 @@ jQuery.noConflict()(function ($) {
 		/**
 			Show animations for elements
 		**/
-		initAnimations: function () {
+		initAnimations: function() {
 
 			if ($("html").hasClass("mobile")) {
-				$("[data-appear-animation]").each(function () {
+				$("[data-appear-animation]").each(function() {
 
 					if ($(this).data("appear-animation") == 'animateWidth') {
 						$(this).css('width', $(this).data("width"));
@@ -1009,7 +1009,7 @@ jQuery.noConflict()(function ($) {
 				return false;
 			}
 
-			$("[data-appear-animation]").each(function () {
+			$("[data-appear-animation]").each(function() {
 
 				var self = $(this);
 
@@ -1019,9 +1019,9 @@ jQuery.noConflict()(function ($) {
 
 				if ($(window).width() > 959) {
 
-					self.appear(function () {
+					self.appear(function() {
 
-						setTimeout(function () {
+						setTimeout(function() {
 
 							if (animation == 'animateWidth') {
 								self.css('width', self.data("width"));
@@ -1037,7 +1037,7 @@ jQuery.noConflict()(function ($) {
 
 								self.addClass("animated");
 
-								self.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+								self.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
 									$(this).removeClass('animated').removeClass(animation);
 								});
 
@@ -1061,13 +1061,13 @@ jQuery.noConflict()(function ($) {
 		/**
 			Check email address
 		**/
-		isValidEmailAddress: function (emailAddress) {
+		isValidEmailAddress: function(emailAddress) {
 			var pattern = new RegExp(/^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?$/i);
 			return pattern.test(emailAddress);
 		}
 
-	}
+	};
 
 	Core.initialize();
 
-});
+})(jQuery);

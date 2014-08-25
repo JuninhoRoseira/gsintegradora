@@ -3,6 +3,49 @@
 	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@section Scripts {
+	<script src="~/Scripts/jquery.captcha.js"></script>
+	<script language="javascript">
+		$(function() {
+			$("#input-captcha")
+				.css({
+					"text-transform": "none"
+				})
+				.captcha({
+					error: function(elem) {
+						$(elem).attr('title', 'Favor digitar o texto correto').tipsy("show").focus();
+					},
+					success: function(elem) {
+						$(elem).tipsy("hide");
+					},
+					createComplete: function(inputElem, captchaElem) {
+						$("section.contacts p.row").css({
+							"margin-bottom": "2px" 
+						});
+
+						$("section.contacts textarea, section.contacts input").css({
+							padding: "6px 4px"
+						});
+						
+						var bounds = inputElem.getBounds();
+
+						captchaElem.css({
+							position: "absolute",
+							top: (bounds.top - 128) + "px",
+							left: (bounds.left + bounds.width - 56) + "px",
+							borderColor: "#a60000",
+							color: "#a60000",
+							fontSize: "10px",
+							letterSpacing: "3px",
+							padding: "2px"
+						});
+
+					}
+				});
+		});
+	</script>
+}
+
 <section class="section-tabs" id="about">
 	<h2 class="center">A GSIntegradora</h2>
 	<div class="tabs" data-style="alt" id="home-tabs">
@@ -504,7 +547,7 @@
 	<div class="wrapper grid">
 
 		<div class="unit half">
-			<p>Para entrar em contato conosco, você pode preencher o formulário abaixo, ou se desejar atendimento imediato, ligue para o nosso telefone de contato.</p>
+			<p class="row">Para entrar em contato conosco, você pode preencher o formulário abaixo, ou se desejar atendimento imediato, ligue para o nosso telefone de contato.</p>
 			<form id="contact-form" action="@Url.Action("Index")" method="post">
 				<fieldset>
 
@@ -519,17 +562,21 @@
 					<p class="row">
 						<input type="text" name="empresa" id="input-empresa" value="" placeholder="Empresa" />
 					</p>
-					
+
 					<p class="row">
 						<input type="text" name="telefone" id="input-telefone" value="" placeholder="Telefone" />
 					</p>
-					
+
 					<p class="row">
 						<input type="text" name="subject" id="input-subject" value="" placeholder="Assunto" />
 					</p>
 
 					<p class="row">
 						<textarea name="message" id="input-message" placeholder="Mensagem"></textarea>
+					</p>
+
+					<p class="row">
+						<input type="text" name="captcha" id="input-captcha" value="" placeholder="Captcha" />
 					</p>
 
 					<button type="submit" class="style-border-alt alignright"><i class="fa fa-envelope-o"></i>Enviar mensagem</button>
