@@ -6,7 +6,7 @@
 		/**
 			Constructor
 		**/
-		initialize: function() {
+		initialize: function () {
 
 			this.build();
 			this.events();
@@ -15,7 +15,7 @@
 		/**
 			Build page elements, plugins init
 		**/
-		build: function() {
+		build: function () {
 
 			var self = this;
 
@@ -40,14 +40,14 @@
 			/**
 				IE8 Placeholders
 			**/
-			$('.ie9 input[placeholder], .ie9 textarea[placeholder]').each(function() {
+			$('.ie9 input[placeholder], .ie9 textarea[placeholder]').each(function () {
 				$(this).val($(this).attr('placeholder'));
 
-				$(this).focus(function() {
+				$(this).focus(function () {
 					if (this.value == $(this).attr('placeholder')) this.value = '';
 				});
 
-				$(this).blur(function() {
+				$(this).blur(function () {
 					if ($.trim($(this).val()) == '') $(this).val($(this).attr('placeholder'));
 				});
 
@@ -57,7 +57,7 @@
 			var selects = $('select').not('select#sswitcher-primary-font, select#sswitcher-secondary-font');
 			if (selects.length) {
 
-				selects.each(function() {
+				selects.each(function () {
 
 					$(this).selecter({
 						customClass: "theme-select-input"
@@ -68,12 +68,12 @@
 			}
 
 			// pretty checkboxes
-			$('input[type=radio], input[type=checkbox]').each(function() {
-				$(this).on('ifChecked', function(event) {
+			$('input[type=radio], input[type=checkbox]').each(function () {
+				$(this).on('ifChecked', function (event) {
 
 					$(this).attr('checked', 'checked').change();
 
-				}).on('ifUnchecked', function() {
+				}).on('ifUnchecked', function () {
 
 					var name = $(this).attr('name');
 					$(this).removeAttr('checked').change();
@@ -85,7 +85,7 @@
 			});
 
 			// Add class to submenu with children
-			$('#header-menu li').each(function() {
+			$('#header-menu li').each(function () {
 				if ($(this).find('ul').length) {
 					$(this).children('a:first').append('<span class="mobile-menu-toggle"></span>');
 					$(this).addClass('has-children');
@@ -93,7 +93,7 @@
 				}
 			});
 
-			$('.mobile-menu-toggle').click(function() {
+			$('.mobile-menu-toggle').click(function () {
 				$(this).toggleClass('opened');
 				$(this).parent().next('ul:first').toggle();
 				return false;
@@ -106,7 +106,7 @@
 			});
 
 			$('.posts-masonry img').waitForImages({
-				finished: function() {
+				finished: function () {
 					$('.posts-masonry').masonry({
 						itemSelector: '.item-masonry',
 						gutter: 30
@@ -115,7 +115,7 @@
 			});
 
 			// Toggles
-			$('.toggle h4').click(function() {
+			$('.toggle h4').click(function () {
 
 				var top = $(this).parent().parent();
 				var content = $(this).parent().find('.item-content');
@@ -140,7 +140,7 @@
 			});
 
 			// Tabs
-			$('.tabs').each(function() {
+			$('.tabs').each(function () {
 
 				var tabID = $(this).attr('id');
 
@@ -153,17 +153,17 @@
 					useCSSMaxWidth: false,
 					slideEaseDuration: 800,
 					heightEaseDuration: 800,
-					callback: function() {
+					callback: function () {
 
 						self.initAnimations();
 
 					},
-					onload: function() {
+					onload: function () {
 
 						var newsTab = $(this.elem).find('.tab-news .posts-carousel');
 
 						if (newsTab.length) {
-							newsTab.each(function() {
+							newsTab.each(function () {
 
 								$(this).owlCarousel({
 									items: 4,
@@ -183,7 +183,7 @@
 			});
 
 			// Logos carousel
-			$('.logos-carousel').each(function() {
+			$('.logos-carousel').each(function () {
 
 				$(this).owlCarousel({
 					items: 1,
@@ -193,7 +193,7 @@
 			});
 
 			// Testimonials carousel
-			$('.testimonials-carousel').each(function() {
+			$('.testimonials-carousel').each(function () {
 
 				$(this).owlCarousel({
 					autoPlay: true,
@@ -204,13 +204,13 @@
 			});
 
 			// Add different style classes to different tabs
-			$('.ls-wrapper').each(function() {
+			$('.ls-wrapper').each(function () {
 				var style = $(this).find('div.tabs').data('style');
 				$(this).addClass('style-' + style);
 			});
 
 			// Tipsy
-			$('.show-tooltip').each(function() {
+			$('.show-tooltip').each(function () {
 				var g = $(this).data('gravity');
 				g = g == undefined ? 's' : g;
 				$(this).tipsy({ fade: true, gravity: g, opacity: '1' });
@@ -225,7 +225,7 @@
 			}
 
 			// Portfolio widget slider
-			$('.widget .slider').each(function() {
+			$('.widget .slider').each(function () {
 
 				var parent = $(this).parent();
 				var slider = $(this);
@@ -233,7 +233,7 @@
 				$(this).nivoSlider({
 					directionNav: true,
 					controlNav: false,
-					afterChange: function() {
+					afterChange: function () {
 						var index = slider.data('nivo:vars').currentSlide;
 						parent.find('.titles div.item').hide();
 						parent.find('.titles div.item[data-number=' + index + ']').fadeIn();
@@ -243,7 +243,7 @@
 			});
 
 			// Post slider with thumbnails
-			$('.post-gallery').each(function() {
+			$('.post-gallery').each(function () {
 
 				var parent = $(this);
 				var slider = $(this).find('.slider');
@@ -251,7 +251,7 @@
 				slider.nivoSlider({
 					directionNav: true,
 					controlNavThumbs: true,
-					afterLoad: function() {
+					afterLoad: function () {
 
 						parent.find('.nivo-controlNav').addClass('swiper-wrapper').wrap('<div class="nivo-controlNav_wrap swiper-container"></div>');
 						parent.find('.nivo-controlNav_wrap').append('<div class="clear"></div>');
@@ -278,7 +278,7 @@
 
 			if ($('.portfolio').length) {
 
-				$('.portfolio').each(function() {
+				$('.portfolio').each(function () {
 
 					p_item_num++;
 
@@ -319,22 +319,22 @@
 						}
 					});
 
-					$('.portfolio-view-flat').each(function() {
+					$('.portfolio-view-flat').each(function () {
 
 						var flatPItem = $(this);
 
-						$(this).find('.item').hover(function() {
+						$(this).find('.item').hover(function () {
 
 							var imgWidth = parseInt($(this).find('img').width());
 
 							var add = imgWidth - 384;
 
 							flatPItem.find('.swiper-wrapper').width('+=' + add);
-							$(this).stop().animate({ 'width': '+=' + add }, 800, function() {
+							$(this).stop().animate({ 'width': '+=' + add }, 800, function () {
 								swiperFlat.reInit();
 							});
-						}, function() {
-							$(this).stop().animate({ 'width': 384 }, 800, function() {
+						}, function () {
+							$(this).stop().animate({ 'width': 384 }, 800, function () {
 								swiperFlat.reInit();
 							});
 						});
@@ -343,7 +343,7 @@
 
 					// chage view
 					var viewLinks = $(this).find('.filter-view a');
-					viewLinks.click(function() {
+					viewLinks.click(function () {
 						viewLinks.removeClass('current');
 						$(this).addClass('current');
 
@@ -366,7 +366,7 @@
 						Portfolio filters functional
 					**/
 					var filterLinks = $(this).find('.filter-links a');
-					filterLinks.click(function() {
+					filterLinks.click(function () {
 						filterLinks.removeClass('current');
 						$(this).addClass('current');
 
@@ -382,7 +382,7 @@
 
 						var flatViewHiddenElements = flatViewPortfolioItems.not('.item.filter-' + currentFilter).addClass('bounceOut animated');
 
-						portfolioFlatItemsContainer.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+						portfolioFlatItemsContainer.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
 							flatViewHiddenElements.removeClass('bounceIn bounceOut animated').hide();
 							flatViewFilteredItems.removeClass('bounceIn bounceOut animated').show();
 							portfolioSwiper.find('.swiper-scrollbar-flat').show();
@@ -407,7 +407,7 @@
 
 							window.localStorage.setItem("picasso_grid_portfolio_i_" + uniqID, 0);
 
-							filteredItems.each(function() {
+							filteredItems.each(function () {
 								var i = parseInt(window.localStorage.getItem("picasso_grid_portfolio_i_" + uniqID));
 
 								if (i == 0) {
@@ -434,7 +434,7 @@
 
 						}
 
-						portfolioGridItemsContainer.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+						portfolioGridItemsContainer.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
 							if (allGridItems) {
 								allGridItems.removeClass('bounceIn bounceOut animated');
 							}
@@ -452,7 +452,7 @@
 						Portfolio lightbox
 					**/
 					var portfolioDiv = $(this);
-					portfolioDiv.find('a.details').click(function() {
+					portfolioDiv.find('a.details').click(function () {
 
 						var portfolioItemId = $(this).attr('href');
 						var portfolioItem = $(portfolioItemId);
@@ -467,7 +467,7 @@
 				/**
 					Portfolio lightbox close
 				**/
-				$('.portfolio-view-lightbox .overlay, .portfolio-view-lightbox a.close').click(function(e) {
+				$('.portfolio-view-lightbox .overlay, .portfolio-view-lightbox a.close').click(function (e) {
 					$('.portfolio-view-lightbox .item').hide();
 					$('body').css('overflow', 'auto');
 					$('.portfolio-view-lightbox').fadeOut();
@@ -477,7 +477,7 @@
 				/**
 					Portfolio lightbox navigation: pagination links
 				**/
-				$('.portfolio-view-lightbox .images-pagination a').click(function() {
+				$('.portfolio-view-lightbox .images-pagination a').click(function () {
 
 					var portfolioItem = $(this).parents('.item');
 
@@ -496,7 +496,7 @@
 				/**
 					Portfolio lightbox navigation: prev / next image
 				**/
-				$('.next-image, .prev-image').click(function() {
+				$('.next-image, .prev-image').click(function () {
 
 					var portfolioItem = $(this).parents('.item');
 					var index = portfolioItem.find('.images-pagination a').index(portfolioItem.find('.images-pagination a.current'));
@@ -520,7 +520,7 @@
 				/**
 					Portfolio lightbox navigation: prev / next project
 				**/
-				$('.next-project, .prev-project').click(function() {
+				$('.next-project, .prev-project').click(function () {
 
 					var portfolioItem = $(this).parents('.item');
 					var portfolioDiv = $(this).parents('.portfolio');
@@ -535,7 +535,7 @@
 
 					portfolioItem.find('.images-pagination, .next-image, .prev-image, .next-project, .prev-project, .close').hide();
 
-					portfolioItem.fadeOut(500, function() {
+					portfolioItem.fadeOut(500, function () {
 
 						portfolioItem = portfolioDiv.find('.portfolio-view-lightbox .item:eq(' + newIndex + ')');
 
@@ -549,7 +549,7 @@
 				/**
 					Resize portfolio lightbox with window
 				**/
-				$(window).resize(function() {
+				$(window).resize(function () {
 					self.resizeLightBox();
 				});
 
@@ -558,9 +558,9 @@
 			/**
 				Body parallax
 			**/
-			$('section.parallax').each(function() {
+			$('section.parallax').each(function () {
 				var parallaxItem = $(this);
-				$(window).scroll(function() {
+				$(window).scroll(function () {
 					var yPos = -($(window).scrollTop() / parallaxItem.data('parallax-speed'));
 					var coords = 'center ' + yPos + 'px';
 					parallaxItem.css({ backgroundPosition: coords });
@@ -597,13 +597,13 @@
 					freeMode: true
 				});
 
-				$('.media-page .swiper-container a').hover(function() {
+				$('.media-page .swiper-container a').hover(function () {
 					$('.media-page .swiper-container a').not($(this)).stop().fadeTo(500, '0.3');
-				}, function() {
+				}, function () {
 					$('.media-page .swiper-container a').stop().fadeTo(500, '1');
 				});
 
-				$('.media-page .swiper-container a').click(function() {
+				$('.media-page .swiper-container a').click(function () {
 
 					var index = $('.media-page .swiper-container a').index(this);
 					index++;
@@ -613,7 +613,7 @@
 					return false;
 				});
 
-				$('#show-hide-media-thumbs').click(function() {
+				$('#show-hide-media-thumbs').click(function () {
 
 					$(this).toggleClass('closed');
 					$('.thumbs').fadeToggle(100);
@@ -625,13 +625,13 @@
 			}
 
 			// Close preloader
-			$(window).load(function() {
+			$(window).load(function () {
 				if ($('body.preloader').length) {
 
 					$('body').waitForImages({
 						waitForAll: true,
-						finished: function() {
-							$('#preloader').fadeOut(800, function() {
+						finished: function () {
+							$('#preloader').fadeOut(800, function () {
 								$('body.preloader').removeClass('preloader');
 								$(this).remove();
 							});
@@ -650,23 +650,23 @@
 		/**
 			Set page events
 		**/
-		events: function() {
+		events: function () {
 
 			var self = this;
 
 			// toggle mobile menu
-			$('#phone-toggle-menu').click(function() {
+			$('#phone-toggle-menu').click(function () {
 				$('#header-menu').toggleClass('hide-on-phone hide-on-tablet').toggleClass('opened');
 				$(this).toggleClass('opened');
 				return false;
 			});
 
 			// pricing tables on-hover transform
-			$('.pricing-table.flip .unit').mouseenter(function(e) {
+			$('.pricing-table.flip .unit').mouseenter(function (e) {
 				if ($(window).width() > 1199 && $(e.target).hasClass('button') == false) {
 					$(this).toggleClass('hover');
 				}
-			}).mouseleave(function(e) {
+			}).mouseleave(function (e) {
 				if ($(window).width() > 1199 && $(e.target).hasClass('button') == false) {
 					$(this).toggleClass('hover');
 				}
@@ -682,7 +682,7 @@
 			/**
 				Tap header menu
 			**/
-			$('.mobile #header-menu > li a').on('click', function() {
+			$('.mobile #header-menu > li a').on('click', function () {
 				var submenu = $(this).next('ul');
 				if (submenu.length) {
 					submenu.show();
@@ -691,31 +691,31 @@
 			});
 
 			// Set min-height for pricing tables
-			$(window).load(function() {
+			$(window).load(function () {
 				self.setupFlippedTables();
 			});
 
-			$(window).resize(function() {
+			$(window).resize(function () {
 				self.setupFlippedTables();
 			});
 
 			// close alert boxes
-			$('.alert').click(function() {
-				$(this).fadeOut(400, function() {
+			$('.alert').click(function () {
+				$(this).fadeOut(400, function () {
 					$(this).remove();
 				});
 			});
 
 			// display sharer
-			$('a.display-sharer').click(function() {
+			$('a.display-sharer').click(function () {
 				$(this).parents('.actions').find('.sharer').slideToggle();
 			});
 
-			$('a.display-sharer').mouseenter(function(e) {
+			$('a.display-sharer').mouseenter(function (e) {
 				$(this).parents('.actions').find('.sharer').slideToggle();
 			});
 
-			$('.sharer').mouseleave(function(e) {
+			$('.sharer').mouseleave(function (e) {
 				$(this).slideToggle();
 			});
 
@@ -723,13 +723,13 @@
 			this.handleContactForm();
 
 			// testimonials section
-			$('body.home-page section.testimonials').each(function() {
+			$('body.home-page section.testimonials').each(function () {
 
 				var section = $(this);
 				var items = section.find('.item');
 				var links = section.find('.pages a');
 
-				links.on('click tap', function() {
+				links.on('click tap', function () {
 
 					var currentPage = links.index($(this));
 					items.hide();
@@ -760,19 +760,19 @@
 		/**
 			Display portfolio lightbox
 		**/
-		showPortfolioLightbox: function(portfolioDiv, portfolioItem) {
+		showPortfolioLightbox: function (portfolioDiv, portfolioItem) {
 
 			var self = this;
 
 			portfolioDiv.find('.portfolio-view-lightbox').fadeIn();
 
 			portfolioItem.find('img').waitForImages({
-				finished: function() {
+				finished: function () {
 
 					$('body').css('overflow', 'hidden');
 					portfolioItem.show();
 					portfolioItem.find('.images > img').hide();
-					portfolioItem.find('.images > img:first').fadeIn(400, function() {
+					portfolioItem.find('.images > img:first').fadeIn(400, function () {
 
 						portfolioItem.find('a.close').show();
 						portfolioItem.find('.images-pagination a').removeClass('current');
@@ -794,7 +794,7 @@
 				}
 			});
 
-			portfolioItem.find('img').each(function() {
+			portfolioItem.find('img').each(function () {
 				if (!$(this).attr('src'))
 					$(this).attr('src', $(this).data('src'));
 			});
@@ -804,7 +804,7 @@
 		/**
 			Resize lightbox portfolio window
 		**/
-		resizeLightBox: function() {
+		resizeLightBox: function () {
 
 			if ($('.portfolio-view-lightbox:visible').length) {
 				var descWidth = $('.portfolio-view-lightbox img:visible').width();
@@ -816,7 +816,7 @@
 		/**
 			Header menu scroll
 		**/
-		navMenu: function() {
+		navMenu: function () {
 
 			// one page nav
 			if ($('body.template-home-one-page').length) {
@@ -836,7 +836,7 @@
 				var el = $('#header');
 				var elpos_original = el.offset().top;
 
-				$(window).scroll(function() {
+				$(window).scroll(function () {
 					var elpos = el.offset().top;
 					var windowpos = $(window).scrollTop();
 					var finaldestination = windowpos;
@@ -870,7 +870,7 @@
 
 			}
 
-			$(window).resize(function() {
+			$(window).resize(function () {
 				if ($(window).width() < 959) {
 					$('#header').removeClass('scrolled');
 					$('body').removeClass('scrolling');
@@ -884,12 +884,12 @@
 		/**
 			Calculate flipped tables min-height
 		**/
-		setupFlippedTables: function() {
+		setupFlippedTables: function () {
 
 			if ($(".pricing-table.flip").length && $(window).width() > 1199) {
-				$(".pricing-table.flip").each(function() {
+				$(".pricing-table.flip").each(function () {
 
-					var pricingUnitMaxHeight = Math.max.apply(null, $(this).find(".inside").map(function() {
+					var pricingUnitMaxHeight = Math.max.apply(null, $(this).find(".inside").map(function () {
 						return $(this).outerHeight(true);
 					}).get());
 
@@ -903,49 +903,13 @@
 		/**
 			Handle contact form
 		**/
-		handleContactForm: function() {
+		handleContactForm: function () {
 
 			var self = this;
 
 			$('#contact-form input, #contact-form textarea').tipsy({ trigger: 'manual', gravity: 'sw', fade: true });
 
-			$("#input-captcha")
-				.css({
-					"text-transform": "none"
-				})
-				.captcha({
-					error: function(elem) {
-						$(elem).attr('title', 'Favor digitar o texto correto').tipsy("show").focus();
-					},
-					success: function(elem) {
-						$(elem).tipsy("hide");
-					},
-					createComplete: function(inputElem, captchaElem) {
-						$("section.contacts p.row").css({
-							"margin-bottom": "2px"
-						});
-
-						$("section.contacts textarea, section.contacts input").css({
-							padding: "6px 4px"
-						});
-
-						var bounds = inputElem.getBounds();
-
-						captchaElem.css({
-							position: "absolute",
-							top: (bounds.top - 128) + "px",
-							left: (bounds.left + bounds.width - 56) + "px",
-							borderColor: "#a60000",
-							color: "#a60000",
-							fontSize: "10px",
-							letterSpacing: "3px",
-							padding: "2px"
-						});
-
-					}
-				});
-
-			$('#contact-form').submit(function() {
+			$('#contact-form').submit(function () {
 
 				var form = $(this);
 
@@ -961,10 +925,14 @@
 				var emailInput = $('#input-email');
 				var email = emailInput.val();
 
-				var subject = $('#input-subject').val();
+				var subjectInput = $('#input-subject');
+				var subject = subjectInput.val();
 
 				var messageInput = $('#input-message');
 				var message = messageInput.val();
+
+				var captchaInput = $('#input-captcha');
+				var captchaSpan = $('#input-captcha-span');
 
 				if ($.trim(name) == '') {
 					nameInput.attr('title', 'Please enter your name').tipsy("show").focus();
@@ -994,11 +962,25 @@
 					telefoneInput.tipsy("hide");
 				}
 
+				if ($.trim(subject) == '') {
+					subjectInput.attr('title', 'Favor digitar o assunto').tipsy("show").focus();
+					return false;
+				} else {
+					subjectInput.tipsy("hide");
+				}
+
 				if ($.trim(message) == '') {
 					messageInput.attr('title', 'Favor digitar uma mensagem').tipsy("show").focus();
 					return false;
 				} else {
 					messageInput.tipsy("hide");
+				}
+
+				if (captchaInput.val() != captchaSpan.text()) {
+					captchaInput.attr('title', 'Favor digitar o texto correto').tipsy("show").focus();
+					return false;
+				} else {
+					captchaInput.tipsy("hide");
 				}
 
 				$.ajax({
@@ -1013,11 +995,11 @@
 						'empresa': empresa,
 						'telefone': telefone
 					},
-					beforeSend: function() {
+					beforeSend: function () {
 						$('#contact-form input, #contact-form textarea, #contact-form button').attr('disabled', 'disabled');
 						$('#contact-form').fadeTo(500, '0.5');
 					},
-					success: function(response) {
+					success: function (response) {
 
 						form.html('<h3 class="success">Sua mensagem foi enviada. Obrigado!</h3>').css('opacity', '1');
 
@@ -1025,6 +1007,7 @@
 				});
 
 				return false;
+
 			});
 
 		},
@@ -1032,10 +1015,10 @@
 		/**
 			Show animations for elements
 		**/
-		initAnimations: function() {
+		initAnimations: function () {
 
 			if ($("html").hasClass("mobile")) {
-				$("[data-appear-animation]").each(function() {
+				$("[data-appear-animation]").each(function () {
 
 					if ($(this).data("appear-animation") == 'animateWidth') {
 						$(this).css('width', $(this).data("width"));
@@ -1045,7 +1028,7 @@
 				return false;
 			}
 
-			$("[data-appear-animation]").each(function() {
+			$("[data-appear-animation]").each(function () {
 
 				var self = $(this);
 
@@ -1055,9 +1038,9 @@
 
 				if ($(window).width() > 959) {
 
-					self.appear(function() {
+					self.appear(function () {
 
-						setTimeout(function() {
+						setTimeout(function () {
 
 							if (animation == 'animateWidth') {
 								self.css('width', self.data("width"));
@@ -1073,7 +1056,7 @@
 
 								self.addClass("animated");
 
-								self.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+								self.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
 									$(this).removeClass('animated').removeClass(animation);
 								});
 
@@ -1097,7 +1080,7 @@
 		/**
 			Check email address
 		**/
-		isValidEmailAddress: function(emailAddress) {
+		isValidEmailAddress: function (emailAddress) {
 			var pattern = new RegExp(/^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?$/i);
 			return pattern.test(emailAddress);
 		}

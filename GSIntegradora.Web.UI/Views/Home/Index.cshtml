@@ -3,6 +3,50 @@
 	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@section Scripts {
+	<script type="text/javascript">
+		$(function () {
+			$("#input-captcha")
+				.css({
+					"text-transform": "none"
+				})
+				.captcha({
+					validateCaptcha: false,
+					error: function (elem) {
+						$(elem).attr('title', 'Favor digitar o texto correto').tipsy("show").focus();
+					},
+					success: function (elem) {
+						$(elem).tipsy("hide");
+					},
+					createComplete: function (inputElem, captchaElem) {
+						$("section.contacts p.row").css({
+							"margin-bottom": "2px"
+						});
+
+						$("section.contacts textarea, section.contacts input").css({
+							padding: "6px 4px"
+						});
+
+						var bounds = inputElem.getBounds();
+
+						captchaElem.css({
+							position: "absolute",
+							top: (bounds.top - 128) + "px",
+							left: (bounds.left + bounds.width - 56) + "px",
+							borderColor: "#a60000",
+							color: "#a60000",
+							fontSize: "10px",
+							letterSpacing: "3px",
+							padding: "2px"
+						});
+
+					}
+				});
+
+		});
+	</script>
+}
+
 <section class="section-tabs" id="about">
 	<h2 class="center">A GSIntegradora</h2>
 	<div class="tabs" data-style="alt" id="home-tabs">
