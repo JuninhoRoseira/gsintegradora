@@ -720,7 +720,7 @@
 			});
 
 			// handle contact form
-			//  this.handleContactForm();
+			this.handleContactForm();
 
 			// testimonials section
 			$('body.home-page section.testimonials').each(function() {
