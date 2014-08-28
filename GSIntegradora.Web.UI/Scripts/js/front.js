@@ -720,7 +720,7 @@
 			});
 
 			// handle contact form
-			this.handleContactForm();
+			//  this.handleContactForm();
 
 			// testimonials section
 			$('body.home-page section.testimonials').each(function() {
@@ -908,6 +908,42 @@
 			var self = this;
 
 			$('#contact-form input, #contact-form textarea').tipsy({ trigger: 'manual', gravity: 'sw', fade: true });
+
+			$("#input-captcha")
+				.css({
+					"text-transform": "none"
+				})
+				.captcha({
+					error: function(elem) {
+						$(elem).attr('title', 'Favor digitar o texto correto').tipsy("show").focus();
+					},
+					success: function(elem) {
+						$(elem).tipsy("hide");
+					},
+					createComplete: function(inputElem, captchaElem) {
+						$("section.contacts p.row").css({
+							"margin-bottom": "2px"
+						});
+
+						$("section.contacts textarea, section.contacts input").css({
+							padding: "6px 4px"
+						});
+
+						var bounds = inputElem.getBounds();
+
+						captchaElem.css({
+							position: "absolute",
+							top: (bounds.top - 128) + "px",
+							left: (bounds.left + bounds.width - 56) + "px",
+							borderColor: "#a60000",
+							color: "#a60000",
+							fontSize: "10px",
+							letterSpacing: "3px",
+							padding: "2px"
+						});
+
+					}
+				});
 
 			$('#contact-form').submit(function() {
 

@@ -8,7 +8,9 @@ namespace GSIntegradora.Web.UI
 		public static void RegisterBundles(BundleCollection bundles)
 		{
 			bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-						"~/Scripts/jquery-{version}.js"));
+				"~/Scripts/jquery-{version}.js",
+				"~/Scripts/jquery.captcha.js"
+				));
 
 						// Piccasso
 			bundles.Add(new ScriptBundle("~/bundles/Piccasso/js").Include(
