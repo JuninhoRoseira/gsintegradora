@@ -6494,13 +6494,17 @@ section.contacts #google-map {
 	margin-bottom: 50px;
 }
 
+p.row span {
+	color: red;
+}
+
 section.contacts form input[type=text],
 section.contacts form input[type=email],
 section.contacts form textarea,
 section.contacts form input[type=number] {
-	background-color: #fbfbfb;
+	background-color: #cccccc;
 	border: 0;
-	width: 100%;
+	width: 98%;
 	border-color: #fbfbfb;
 	color: #999999;
 	letter-spacing: 2px;

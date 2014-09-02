@@ -549,35 +549,36 @@
 
 		<div class="unit half">
 			<p class="row">Para entrar em contato conosco, você pode preencher o formulário abaixo, ou se desejar atendimento imediato, ligue para o nosso telefone de contato.</p>
+			<p class="row" style="color: red;">* campos obrigatorios</p>
 			<form id="contact-form" action="@Url.Action("Index")" method="post">
 				<fieldset>
 
 					<p class="row">
-						<input type="text" id="input-name" name="name" value="" placeholder="Nome completo" />
+						<input type="text" id="input-name" name="name" value="" placeholder="Nome completo" /><span>*</span>
 					</p>
 
 					<p class="row">
-						<input type="email" id="input-email" name="email" value="" placeholder="Email" />
+						<input type="email" id="input-email" name="email" value="" placeholder="Email" /><span>*</span>
 					</p>
 
 					<p class="row">
-						<input type="text" name="empresa" id="input-empresa" value="" placeholder="Empresa" />
+						<input type="text" name="empresa" id="input-empresa" value="" placeholder="Empresa" /><span>*</span>
 					</p>
 
 					<p class="row">
-						<input type="text" name="telefone" id="input-telefone" value="" placeholder="Telefone" />
+						<input type="text" name="telefone" id="input-telefone" value="" placeholder="Telefone" /><span>*</span>
 					</p>
 
 					<p class="row">
-						<input type="text" name="subject" id="input-subject" value="" placeholder="Assunto" />
+						<input type="text" name="subject" id="input-subject" value="" placeholder="Assunto" /><span>*</span>
 					</p>
 
 					<p class="row">
-						<textarea name="message" id="input-message" placeholder="Mensagem"></textarea>
+						<textarea name="message" id="input-message" placeholder="Mensagem"></textarea><span>*</span>
 					</p>
 
 					<p class="row">
-						<input type="text" name="captcha" id="input-captcha" value="" placeholder="Captcha" />
+						<input type="text" name="captcha" id="input-captcha" value="" placeholder="Captcha" /><span>*</span>
 					</p>
 
 					<button type="submit" class="style-border-alt alignright"><i class="fa fa-envelope-o"></i>Enviar mensagem</button>
@@ -592,9 +593,9 @@
 
 			<p class="phone"><i class="fa fa-phone-square"></i>(19) 3241-5688</p>
 
-			<p class="email"><i class="fa fa-envelope"></i><a href="mailto:gsti@gsti.com.br">Contato: gsti@gsti.com.br</a></p>
-			<p class="email"><i class="fa fa-envelope"></i><a href="mailto:sac@gsti.com.br">SAC: sac@gsti.com.br</a></p>
-			<p class="email"><i class="fa fa-envelope"></i><a href="mailto:rh@gsti.com.br">Trabalhe conosco: rh@gsti.com.br</a></p>
+			<p class="email"><i class="fa fa-envelope"></i><a href="mailto:contato@gsintegradora.com">Contato: contato@gsintegradora.com</a></p>
+			<p class="email"><i class="fa fa-envelope"></i><a href="mailto:sac@gsintegradora.com">SAC: sac@gsintegradora.com</a></p>
+			<p class="email"><i class="fa fa-envelope"></i><a href="mailto:rh@gsintegradora.com">Trabalhe conosco: rh@gsintegradora.com</a></p>
 
 		</div>
 
