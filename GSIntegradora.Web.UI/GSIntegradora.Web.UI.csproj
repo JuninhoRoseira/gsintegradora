@@ -665,9 +665,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\GSIntegradora.Aplicacao\GSIntegradora.Aplicacao.csproj">
       <Project>{39a391b1-b5c6-46fe-9cf7-739911f99765}</Project>

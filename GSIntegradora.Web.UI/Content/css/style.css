@@ -3187,10 +3187,10 @@ header#header {
 	z-index: 200;
 	height: 130px;
 	line-height: 80px;
-	padding: 0 45px;
 	border-bottom: 5px solid #f0f0f0;
 	margin-bottom: 55px;
 	background: #ffffff;
+	width: 100%;
 }
 
 	header#header nav {
@@ -3207,6 +3207,8 @@ header#header {
 		display: block;
 		color: #43474d;
 		width: 244px;
+		left: 20px;
+		position: absolute;
 	}
 
 		header#header .logo img {
@@ -3249,6 +3251,7 @@ header#header.scrolled {
 	position: fixed;
 	z-index: 100;
 	height: 75px;
+	line-height: 80px;
 	top: -75px;
 	padding-top: 40px;
 	-webkit-box-sizing: border-box;
@@ -3313,8 +3316,9 @@ header#header.scrolled {
 }
 
 #header nav {
-	position: relative;
 	float: right;
+    position: absolute;
+    top: 60px;
 }
 
 .social-links {
@@ -3322,8 +3326,8 @@ header#header.scrolled {
 	position: absolute;
 	font-size: 18px;
 	font-size: 1.8rem;
-	right: 76px;
-	top: 50px;
+	right: 30px;
+	top: 0;
 }
 
 	.social-links a {
@@ -3351,9 +3355,9 @@ header#header.scrolled {
 	#header nav ul {
 		margin: 0;
 		padding: 0;
-		position: relative;
+		/*position: relative;*/
 		margin: 0 auto;
-		width: 876px;
+		width: 674px;
 	}
 
 		#header nav ul li:before {
@@ -3372,13 +3376,18 @@ header#header.scrolled {
 
 	#header nav > ul > li {
 		display: inline-block;
-		margin: 0px 35px;
+		margin: 0px 20px;
 		position: relative;
 	}
 
+header#headerul#header-menu {
+	margin: 0 auto;
+	/*width: 674px;*/
+}
+
 header#header.scrolled ul#header-menu {
 	margin: 0 auto;
-	width: 674px;
+	/*width: 674px;*/
 }
 
 header#header.scrolled nav {
