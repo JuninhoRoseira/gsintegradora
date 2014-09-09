@@ -935,49 +935,49 @@
 				var captchaSpan = $('#input-captcha-span');
 
 				if ($.trim(name) == '') {
-					nameInput.attr('title', 'Please enter your name').tipsy("show").focus();
+					nameInput.attr('title', 'Por favor, digite seu nome.').tipsy("show").focus();
 					return false;
 				} else {
 					nameInput.tipsy("hide");
 				}
 
 				if ($.trim(email) == '' || !self.isValidEmailAddress(email)) {
-					emailInput.attr('title', 'Favor digitar um e-mail válido').tipsy("show").focus();
+					emailInput.attr('title', 'Por favor, digite um e-mail valido.').tipsy("show").focus();
 					return false;
 				} else {
 					emailInput.tipsy("hide");
 				}
 
 				if ($.trim(empresa) == '') {
-					empresaInput.attr('title', 'Favor digitar a empresa').tipsy("show").focus();
+					empresaInput.attr('title', 'Por favor, digite o nome da empresa.').tipsy("show").focus();
 					return false;
 				} else {
 					empresaInput.tipsy("hide");
 				}
 
 				if ($.trim(telefone) == '') {
-					telefoneInput.attr('title', 'Favor digitar telefone').tipsy("show").focus();
+					telefoneInput.attr('title', 'Por favor digite o telefone.').tipsy("show").focus();
 					return false;
 				} else {
 					telefoneInput.tipsy("hide");
 				}
 
 				if ($.trim(subject) == '') {
-					subjectInput.attr('title', 'Favor digitar o assunto').tipsy("show").focus();
+					subjectInput.attr('title', 'Por favor digite o assunto').tipsy("show").focus();
 					return false;
 				} else {
 					subjectInput.tipsy("hide");
 				}
 
 				if ($.trim(message) == '') {
-					messageInput.attr('title', 'Favor digitar uma mensagem').tipsy("show").focus();
+					messageInput.attr('title', 'Por favor digite a mensagem').tipsy("show").focus();
 					return false;
 				} else {
 					messageInput.tipsy("hide");
 				}
 
 				if (captchaInput.val() != captchaSpan.text()) {
-					captchaInput.attr('title', 'Favor digitar o texto correto').tipsy("show").focus();
+					captchaInput.attr('title', 'Por favor digite o texto correto no campo Captcha.').tipsy("show").focus();
 					return false;
 				} else {
 					captchaInput.tipsy("hide");
@@ -1001,7 +1001,7 @@
 					},
 					success: function (response) {
 
-						form.html('<h3 class="success">Sua mensagem foi enviada. Obrigado!</h3>').css('opacity', '1');
+						form.closest("div").html('<h3 class="success">Sua mensagem foi enviada. Obrigado!</h3>').css('opacity', '1');
 
 					}
 				});
