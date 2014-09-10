@@ -526,7 +526,6 @@
     <Content Include="Content\css\style.less" />
     <Content Include="Content\images\temp\Descr.WD3" />
     <Content Include="Content\images\temp\Thumbs.db" />
-    <Content Include="Content\images\Thumbs.db" />
     <Content Include="Content\agile\ckeditor\skins\kama\readme.md" />
     <Content Include="Content\agile\ckeditor\skins\moono\readme.md" />
     <Content Include="Content\agile\fonts\font_awesome\fontawesome-webfont.eot" />
