@@ -2839,9 +2839,9 @@ textarea:focus {
 header#header {
   position: relative;
   z-index: 200;
-  height: 200px;
-  line-height: 80px;
-  padding: 0 45px;
+  height: 100px;
+  line-height: 0px;
+  padding: 0 20px;
   border-bottom: 5px solid #f0f0f0;
   margin-bottom: 55px;
   background: #ffffff;
@@ -2850,9 +2850,11 @@ header#header {
         /*margin-top: 100px;*/
     }
 header#header .logo {
-    padding-top: 40px;
+    /*padding-top: 40px;*/
     height: 68px;
     text-decoration: none;
+    position:absolute;
+    top: 20px;
     font-size: 24px;
     font-size: 2.4rem;
     font-family: "Raleway";
@@ -2900,12 +2902,12 @@ header#header.scrolled {
   width: 100%;
 }
 header#header.scrolled .social-links {
-    right: 30px !important;
-    top: -15px !important;
+    right: 52px !important;
+    top: 15px !important;
     position: absolute;
   }
     header#header.scrolled .logo {
-        margin-top: 20px !important;
+        /*margin-top: 20px !important;*/
     }
     header#header.scrolled nav {
         margin-top: 0px !important;
@@ -2947,8 +2949,8 @@ header#header.scrolled .social-links {
     position:absolute;
     font-size: 18px;
     font-size: 1.8rem;
-    right: 76px;
-    top: 50px;
+    right: 52px;
+    top: 15px;
 }
 .social-links a {
   margin-left: 20px;
@@ -2972,9 +2974,12 @@ header#header.scrolled .social-links {
 #header nav ul {
   margin: 0;
   padding: 0;
-  position: relative;
-  margin: 0 auto;
-  width: 808px;
+  position: absolute;
+  right: 0px;
+  top: 68px;
+  /*float:right;*/
+  /*margin: 0 auto;*/
+  width: 630px;
 }
 #header nav ul li:before {
   display: none;
@@ -2989,12 +2994,12 @@ header#header.scrolled .social-links {
 }
 #header nav > ul > li {
   display: inline-block;
-  margin: 0px 35px;
+  margin: 0px 20px;
   position: relative;
 }
 header#header.scrolled ul#header-menu {
-    margin: 34px auto 0;
-    width: 674px;
+    /*margin: 34px auto 0;*/
+    width: 630px;
 }
 header#header.scrolled nav {
     width: 610px;
@@ -3008,7 +3013,7 @@ header#header.scrolled nav {
 }
 #header nav > ul > li.current-menu-item > a,
 #header nav > ul > li:hover > a {
-  height: 50px;
+  height: 22px;
   border-bottom: 4px solid #A60000;
   -webkit-transition: 0.3s border;
   -moz-transition: 0.3s border;
