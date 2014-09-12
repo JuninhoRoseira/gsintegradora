@@ -2894,7 +2894,7 @@ header#header.scrolled .logo {
 header#header.scrolled {
   position: fixed;
   z-index: 100;
-  height: 100px;
+  height: 70px;
   top: -75px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -2978,7 +2978,7 @@ header#header.scrolled .social-links {
   padding: 0;
   position: absolute;
   right: 0px;
-  top: 68px;
+  top: 73px;
   /*float:right;*/
   /*margin: 0 auto;*/
   width: 630px;
@@ -3002,6 +3002,7 @@ header#header.scrolled .social-links {
 header#header.scrolled ul#header-menu {
     /*margin: 34px auto 0;*/
     width: 630px;
+	top: 38px;
 }
 header#header.scrolled nav {
     width: 610px;
