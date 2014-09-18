@@ -3238,6 +3238,7 @@ header#header.scrolled .logo {
 	left: 80px;
 	padding-top: 0px !important;
 	z-index: 9999;
+	top: 8px;
 }
 
 header#header.scrolled {
@@ -3257,10 +3258,6 @@ header#header.scrolled {
 		right: 52px !important;
 		top: 15px !important;
 		position: absolute;
-	}
-
-	header#header.scrolled .logo {
-		/*margin-top: 20px !important;*/
 	}
 
 	header#header.scrolled nav {
