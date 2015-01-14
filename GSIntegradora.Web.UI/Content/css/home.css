@@ -1,0 +1,30 @@
+﻿.separador1 {
+	font-size: 52px;
+	position: absolute !important;
+	top: 340px !important;
+	z-index: 9999 !important;
+	text-transform: none;
+	font-family: Calibri;
+	font-weight: bold;
+	border-bottom: 2px solid white;
+	width: 100px !important;
+	left: 590px;
+}
+
+@media only screen and (min-width: 1360px) {
+	.separador1 {
+		left: 630px !important;
+	}
+}
+
+@media only screen and (min-width: 1600px) {
+	.separador1 {
+		left: 714px !important;
+	}
+}
+
+@media only screen and (min-width: 1900px) {
+	.separador1 {
+		left: 872px !important;
+	}
+}
