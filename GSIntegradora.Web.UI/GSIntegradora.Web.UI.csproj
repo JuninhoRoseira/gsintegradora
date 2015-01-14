@@ -144,10 +144,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\DBGSI.mdf" />
-    <Content Include="App_Data\DBGSI_log.ldf">
-      <DependentUpon>DBGSI.mdf</DependentUpon>
-    </Content>
     <Content Include="Content\agile\ckeditor\adapters\jquery.js" />
     <Content Include="Content\agile\ckeditor\ckeditor.js" />
     <Content Include="Content\agile\ckeditor\config.js" />
